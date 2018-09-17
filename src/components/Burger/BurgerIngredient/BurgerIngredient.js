@@ -5,14 +5,14 @@ import classes from './BurgerIngredient.css';
 
 class BurgerIngredient extends Component {
     render() {
-      let ingrideint = null;
+        let ingredient = null;
 
       switch (this.props.type) {
         case ('bread-bottom'):
-            ingrideint = <div className={classes.BreadBottom}></div>;
+                ingredient = <div className={classes.BreadBottom}></div>;
             break;
         case ('bread-top'):
-          ingrideint = (
+                ingredient = (
             <div className={classes.BreadTop}>
               <div className={classes.Seeds1}></div>
               <div className={classes.Seeds2}></div>
@@ -20,26 +20,26 @@ class BurgerIngredient extends Component {
           );
           break;
         case ('meat'):
-          ingrideint = <div className={classes.Meat}></div>;
+                ingredient = <div className={classes.Meat}></div>;
           break;
         case ('cheese'):
-          ingrideint = <div className={classes.Cheese}></div>;
+                ingredient = <div className={classes.Cheese}></div>;
           break;
-        case ('salad'):
-          ingrideint = <div className={classes.Salad}></div>;
+            case ( 'bacon' ):
+                ingredient = <div className={classes.Bacon}></div>;
           break;
-        case ('bacon'):
-          ingrideint = <div className={classes.Bacon}></div>;
+            case ( 'salad' ):
+                ingredient = <div className={classes.Salad}></div>;
           break;
         default:
-          ingrideint = null;
+                ingredient = null;
       }
 
-      return ingrideint;
-    };
+        return ingredient;
+    }
 }
 
-BurgerIngredient.prototypes = {
+BurgerIngredient.propTypes = {
   type: PropTypes.string.isRequired
 };
 
